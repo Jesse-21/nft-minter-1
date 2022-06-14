@@ -7,7 +7,7 @@ export const pinJSONToIPFS = (JSONBody) => {
     .post(url, JSONBody, {
       headers: {
         pinata_api_key: '345afdb6208614d7c9b1',
-        pinata_secret_api_key: 'fd4b7f422d0ebd1b6f81f4c476a68b5bbd4f8dfcca23dc95844f2e8eaab87a79'
+        ipfs_secret_api_key: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJkaWQ6ZXRocjoweDFFOEZjQTBkNjkwMzcwOTdhYzM5REFhN2NFRGQ1YjIxQzMwMzBlNDYiLCJpc3MiOiJuZnQtc3RvcmFnZSIsImlhdCI6MTY1MDg1MDU3NzMwMCwibmFtZSI6Im9mMW5mdC5jb20ifQ.xsz5J5tt7fnI7upbzvVPiPjeiu1Fd7s9qBnwh72pZ0A'
       }
     })
     .then(function (response) {
@@ -20,7 +20,7 @@ export const pinJSONToIPFS = (JSONBody) => {
 }
 
 export const pinFileToIPFS = (file) => {
-  const url = `https://api.pinata.cloud/pinning/pinFileToIPFS`;
+  const url = `https://nftstorage.link/ipfs/`;
 
   let data = new FormData();
   data.append('file', file)
