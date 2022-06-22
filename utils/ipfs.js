@@ -2,11 +2,10 @@ const axios = require('axios');
 const FormData = require('form-data');
 
 export const pinJSONToIPFS = (JSONBody) => {
-  const url = `https://api.pinata.cloud/pinning/pinJSONToIPFS`;
+  const url = `https://nftstorage.link/ipfs/`;
   return axios
     .post(url, JSONBody, {
       headers: {
-        pinata_api_key: '345afdb6208614d7c9b1',
         ipfs_secret_api_key: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJkaWQ6ZXRocjoweDFFOEZjQTBkNjkwMzcwOTdhYzM5REFhN2NFRGQ1YjIxQzMwMzBlNDYiLCJpc3MiOiJuZnQtc3RvcmFnZSIsImlhdCI6MTY1MDg1MDU3NzMwMCwibmFtZSI6Im9mMW5mdC5jb20ifQ.xsz5J5tt7fnI7upbzvVPiPjeiu1Fd7s9qBnwh72pZ0A'
       }
     })
@@ -30,8 +29,7 @@ export const pinFileToIPFS = (file) => {
       maxContentLength: 'Infinity',
       headers: {
         'Content-Type': `multipart/form-data; boundary=${data._boundary}`,
-        pinata_api_key: '345afdb6208614d7c9b1',
-        pinata_secret_api_key: 'fd4b7f422d0ebd1b6f81f4c476a68b5bbd4f8dfcca23dc95844f2e8eaab87a79'
+        ipfs_secret_api_key: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJkaWQ6ZXRocjoweDFFOEZjQTBkNjkwMzcwOTdhYzM5REFhN2NFRGQ1YjIxQzMwMzBlNDYiLCJpc3MiOiJuZnQtc3RvcmFnZSIsImlhdCI6MTY1MDg1MDU3NzMwMCwibmFtZSI6Im9mMW5mdC5jb20ifQ.xsz5J5tt7fnI7upbzvVPiPjeiu1Fd7s9qBnwh72pZ0A'
       }
     })
     .then(function (response) {
