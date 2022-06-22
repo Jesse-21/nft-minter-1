@@ -31,14 +31,14 @@ const Index = ({ signerAddress, contract_1155, contract_721, networkId }) => {
       >
         <div className={classes.paper}>
           <Typography variant="h6">
-            Your current Network is {networkId.name} (chain id {networkId.chainId}). Change it to Matic testnet 80001 or Matic mainnet 137.
+            Your current Network is {networkId.name} (chain id {networkId.chainId}). Change it and/or Verify it is set to Matic testnet 80001 or Matic mainnet 137. If  set correctly disregard this message as its automatic.
           </Typography>
         </div>
 
       </Modal>
       <div className={classes.title}>
-        <Typography variant="h3" style={{ marginBottom: 5 }}>NFT Minter</Typography>
-        <Typography variant="h6" style={{ opacity: 0.5 }}>Mint ERC721 or ERC1155 standard tokens on Polygon (Previously Matic Network) </Typography>
+        <Typography variant="h3" style={{ marginBottom: 5 }}>OF 1 NFT: Quick Minter</Typography>
+        <Typography variant="h6" style={{ opacity: 0.5 }}>Mint ERC721 or ERC1155 standard tokens on Polygon and list on the "OF 1 NFT Marketplace"! </Typography>
       </div>
       {
         trsHash && <Typography variant="h6" style={{ marginBottom: 15 }}>
@@ -46,7 +46,7 @@ const Index = ({ signerAddress, contract_1155, contract_721, networkId }) => {
           <a style={{ color: '#ee6f57' }}
             rel="noopener noreferrer"
             target="_blank"
-            href={`https://explorer-mumbai.maticvigil.com/tx/` + trsHash}>
+            href={`https://polygonscan.com/tx/` + trsHash}>
             Trs Hash
         </a>
         </Typography>
