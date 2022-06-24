@@ -195,7 +195,7 @@ const Form = ({ signerAddress, setIsLoading, setTrsHash, setErr, networkId, setO
               <Button component="span" >
                 <Paper elevation={5}>
                   <Avatar src={imgSrc} className={classes.avatar} variant='rounded' />N
-                <1/Paper>
+                </Paper>
               </Button>
             </label>
           </div>
