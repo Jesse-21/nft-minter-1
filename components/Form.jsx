@@ -74,7 +74,7 @@ const Form = ({ signerAddress, setIsLoading, setTrsHash, setErr, networkId, setO
       const ipfsHash = await pinJSONToIPFS({
         name: name,
         description: desc,
-        image: 'https://gateway.pinata.cloud/ipfs/' + imgHash,
+        image: 'https://nftstorage.link' + imgHash,
         external_url: surl
       })
       toast("JSON data uploaded to IPFS", { type: "success" });
@@ -82,9 +82,9 @@ const Form = ({ signerAddress, setIsLoading, setTrsHash, setErr, networkId, setO
 
       if (nftType === 'ERC721') {
         const web3 = new Web3(window.ethereum)
-        const contract_721 = new web3.eth.Contract(abi, "0xD05a795d339886bB8Dd46cfe2ac009d7f1E48A64");
+        const contract_721 = new web3.eth.Contract(abi, "0xFC71457184928BD2eddC51bB6c6565e57Fc259D9");
 
-        const txnhash = await contract_721.methods.mintToCaller(signerAddress, 'https://gateway.pinata.cloud/ipfs/' + ipfsHash)
+        const txnhash = await contract_721.methods.mintToCaller(signerAddress, 'https://nftstorage.link' + ipfsHash)
           .send({ from: signerAddress })
           .on("confirmation", (confirmationNumber, receipt) => { })
           .on("error", (error, receipt) => {
@@ -174,10 +174,10 @@ const Form = ({ signerAddress, setIsLoading, setTrsHash, setErr, networkId, setO
         {errors.desc && <p className={classes.error}>{errors.desc}</p>}
       </div>
       <div className={classes.formGroup}>
-        <label className={classes.formGroupLabel}>Social Media URL (optional)</label>
+        <label className={classes.formGroupLabel}>OF1NFT on Twitter</label>
         <input
           type="url"
-          placeholder="https://twitter.com/example"
+          placeholder="https://twitter.com/nftof1"
           className={classes.formGroupInput}
           value={surl}
           pattern="https?://.+"
@@ -194,8 +194,8 @@ const Form = ({ signerAddress, setIsLoading, setTrsHash, setErr, networkId, setO
             <label htmlFor="upload-company-logo">
               <Button component="span" >
                 <Paper elevation={5}>
-                  <Avatar src={imgSrc} className={classes.avatar} variant='rounded' />
-                </Paper>
+                  <Avatar src={imgSrc} className={classes.avatar} variant='rounded' />N
+                <1/Paper>
               </Button>
             </label>
           </div>
@@ -213,7 +213,7 @@ const Form = ({ signerAddress, setIsLoading, setTrsHash, setErr, networkId, setO
               ERC721
           </Button>
             <Button className={classes.typeButton}
-              disabled={nftType === 'ERC1155' ? true : false}
+              disabled={nftType === 'ERC1155' ? true }
               onClick={() => setNftType('ERC1155')}
             >
               ERC1155
