@@ -213,7 +213,7 @@ const Form = ({ signerAddress, setIsLoading, setTrsHash, setErr, networkId, setO
               ERC721
           </Button>
             <Button className={classes.typeButton}
-              disabled={nftType === 'ERC1155' ? true }
+              disabled={nftType === 'ERC1155' ? true : false}
               onClick={() => setNftType('ERC1155')}
             >
               ERC1155
